@@ -22,6 +22,19 @@ print("Path of the directory from which the search should begin")
 path = input("(Press Enter to start from root directory): ") or os.path.abspath(os.sep)
 
 filePaths = find_files(filename, path)
+length = len(filePaths)
 
+if length == 0:
+    print("No files found")
+
+elif length > 1:
+    print("Found multiple files.")
+
+else:
+    print("Found your file.")
+
+for i in range(1,length+1):
+    print(f"{i})  {filePaths[i-1]}")
+        
 
 
